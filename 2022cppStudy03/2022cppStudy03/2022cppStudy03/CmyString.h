@@ -10,5 +10,9 @@ private:
 
 	// 저장된 문자열의 길이
 	int m_nlength;
+public:
+	int SetString(const char* pszParam);
+	const char* GetString() const;
+	void Release();
 };
 

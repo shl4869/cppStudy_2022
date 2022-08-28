@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include "CmyString.h"
+using namespace std;
 
 class CRef {
 public:
@@ -16,6 +18,10 @@ public:
 private:
     int m_nData;
 };
+
+void testPR2(const CmyString& param) {
+    cout << param.GetString() << endl;
+}
 int main()
 {
     std::cout << "\n**연습문제**\n\n" << std::endl;
@@ -35,6 +41,19 @@ int main()
     std::cout << "7. 정적 멤버에서는 '이것'을 사용할 수 없습니다. 이것은 무엇입니까?" << std::endl;
     //this 포인터
  
+    std::cout << "\n**실습과제**\n" << std::endl;
+    CmyString strData;
+    strData.SetString("Hello!");
+    cout << strData.GetString() << endl;
+    strData.SetString("World!");
+    cout << strData.GetString() << endl;
+    
+    //practice2
+    strData.SetString("Practice2");
+    testPR2(strData);
+
+    return 0;
+    
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
