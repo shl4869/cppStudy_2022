@@ -4,6 +4,17 @@
 #include <iostream>
 #include "CmyString.h"
 
+void TestFunc(const CmyString& strParam) {
+    cout << strParam << endl;
+}
+
+CmyString TestFunc2(void) {
+    CmyString strTest("TestFunc() return");
+    cout << strTest << endl;
+
+    return strTest;
+}
+
 int main()
 {
     CmyString strData, strTest;
@@ -17,6 +28,13 @@ int main()
     //단순 대입 연산자 호출
     strNewData = strTest;
     cout << strNewData.GetString() << endl;
+
+    //변환생성자 및 허용변환
+    ::TestFunc(strData);
+    ::TestFunc(CmyString("World"));
+
+    // 이름 없는 임시 객체 생성
+    TestFunc2();
 
     return 0;
 }
