@@ -1,4 +1,5 @@
 ﻿  CmyString.cpp
   cppStudy_Practice.cpp
   코드를 생성하고 있습니다...
+D:\GitHub\cppStudy_2022\cppStudy_Practice\cppStudy_Practice\CmyString.cpp(143): warning C4172: 지역 변수 또는 임시: resultSTR의 주소를 반환하고 있습니다.
   cppStudy_Practice.vcxproj -> D:\GitHub\cppStudy_2022\cppStudy_Practice\Debug\cppStudy_Practice.exe

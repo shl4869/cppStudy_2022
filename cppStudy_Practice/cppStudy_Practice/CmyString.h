@@ -10,7 +10,7 @@ public:
 	CmyString(const CmyString& rhs);
 
 	//변환생성자
-	CmyString(const char*);
+	explicit CmyString(const char*);
 	
 	//이동생성자
 	CmyString(CmyString&& rhs);
@@ -26,10 +26,22 @@ private:
 	int m_nlength;
 
 public:
+
 	int SetString(const char* pszParam);
 	const char* GetString() const;
+	
 	void Release();
+	
 	CmyString& operator = (const CmyString& rhs);
 	operator char* (void) const;
+	CmyString operator + (const CmyString& rhs);
+	CmyString& operator += (const CmyString& rhs);
+	char operator[](int nIndex) const;
+	char& operator [](int nIndex);
+	int operator == (const CmyString& rhs);
+	int operator != (const CmyString& rhs);
+
+	int GetLength() const;
+	int Append(const char* pszParam);
 };
 

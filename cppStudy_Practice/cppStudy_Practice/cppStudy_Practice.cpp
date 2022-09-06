@@ -9,17 +9,23 @@ void TestFunc(const CmyString& strParam) {
 }
 
 CmyString TestFunc2(void) {
-    CmyString strTest("TestFunc() return");
+    CmyString strTest("TestFunc2() return");
     cout << strTest << endl;
 
     return strTest;
+}
+
+void TestFunc3(const CmyString& strParam)
+{
+    cout << strParam[0] << endl;
+    cout << strParam[strParam.GetLength() - 1] << endl;
 }
 
 int main()
 {
     CmyString strData, strTest;
     strData.SetString("Hello");
-    strTest.SetString("world");
+    strTest.SetString("World");
 
     //복사생성
     CmyString strNewData(strData);
@@ -35,6 +41,37 @@ int main()
 
     // 이름 없는 임시 객체 생성
     TestFunc2();
+
+    //Practice6
+    CmyString strLeft("Hello"), strRight("World"), strResult;
+    strResult = strLeft + strRight;
+    cout << strResult << endl;
+
+    cout << strLeft << endl;
+    strLeft += CmyString("World");
+    cout << strLeft << endl;
+
+    //Practice7
+    CmyString strParam("HelloWorld");
+    cout << strParam << endl;
+    TestFunc3(strParam);
+
+    //Practice8
+    strLeft.SetString("Test");
+    strRight.SetString("String");
+
+    if (strLeft == strRight)
+        cout << "Same" << endl;
+    else
+        cout << "Different" << endl;
+
+    strLeft = CmyString("String");
+
+    if (strLeft != strRight)
+        cout << "Different" << endl;
+    else
+        cout << "Same" << endl;
+
 
     return 0;
 }
