@@ -2,10 +2,55 @@
 //
 
 #include <iostream>
+using namespace std;
+
+class CTest
+{
+public:
+    CTest() //default
+    {
+        cout << "CTest()" << endl;
+    }
+
+    void TestFunc(void) {
+        cout << "CTest::TestFunc()" << endl;
+    }
+};
+
+class CTestEx : public CTest
+{
+public:
+    CTestEx() //default
+    {
+        cout << "CTestEx()" << endl;
+    }
+
+    //재정의
+    void TestFunc(void) {
+        cout << "CTestEx::TestFunc()" << endl;
+    }
+};
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "\n**강의내용**\n\n" << std::endl;
+    CTest a;
+    a.TestFunc();
+
+    CTestEx b;  //CTest() call before CTestEx() call
+    b.TestFunc();   //the one that has been overrided
+
+    CTest& c = b;
+    c.TestFunc();   //일반함수는 접근 형식 따름: CTest::TestFunc() call
+
+    std::cout << "\n**연습문제**\n\n" << std::endl;
+    std::cout << "1. 파생 클래스에서 일반 매서드를 재정의했다고 가정하겠습니다.\n만일, 파생 형식 인스턴스를 기본 형식에 대한 포인터로 포인팅하고 호출한다면 기본 형식과 파생 형식 중 어느 클래스의 매서드가 호출될까요?" << std::endl;
+    //일반함수는 접근형식에 따르므로 접근형식인 파생형식의 메서드가 호출된다.
+    std::cout << "2. A는 B의, B는 C의 기본 클래스일 때 C 클래스의 인스턴스를 선언한다고 가정하면 가장 먼저 '실행' 되는 생성자는 어느 클래스의 생성자입니까?" << std::endl;
+    //생성자의 call 순서는 가장 밑의 파생클래스부터 기본클래스까지 올라가지만 실행 순서는 반대이다. 따라서 가장 기본클래스인 A의 생성자가 가장 먼저 실행된다.
+
+
+    return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

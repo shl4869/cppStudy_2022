@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "CmyString.h"
+#include "MyStringEx.h"
 
 void TestFunc(const CmyString& strParam) {
     cout << strParam << endl;
@@ -72,7 +73,30 @@ int main()
     else
         cout << "Same" << endl;
 
+    //Practice9
+    CMyStringEx strTest2;
+    strTest2.SetString("I am a boy.");
+    cout << strTest2 << endl;
 
+    int nIndex = strTest2.Find("am");
+    cout << "Index: " << nIndex << endl;
+
+
+    //Practice10
+    CMyStringEx strTest3;
+
+    //문자열이 필터링되어 대체되는 경우
+    strTest3.SetString("멍멍이아들");
+    cout << strTest3 << endl;
+
+    //문자열이 필터링 되지 않는 경우
+    strTest3.SetString("Hello");
+    cout << strTest3 << endl;
+
+
+    //Practice11
+    CMyStringEx strLeft2("Hello"), strRight2("World");
+    cout << strLeft2 + strRight2 << endl;
     return 0;
 }
 

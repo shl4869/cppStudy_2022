@@ -21,7 +21,7 @@ CmyString::CmyString(const CmyString& rhs)
 }
 
 //변환생성자
-CmyString::CmyString(const char* myStr)
+/*explicit */CmyString::CmyString(const char* myStr)
 	:m_pszData(nullptr), m_nlength(0)
 {
 	//cout << "변환생성자call" << endl;
@@ -56,7 +56,7 @@ int CmyString::SetString(const char* pszParam)
 		return 0;
 
 	//문자열 길이
-	m_nlength = strlen(pszParam);
+	m_nlength = (int)strlen(pszParam);
 
 	//메모리 할당
 	m_pszData = new char[m_nlength + 1];
@@ -95,7 +95,7 @@ int CmyString::Append(const char* pszParam) {
 	if (pszParam == NULL)
 		return 0;
 	
-	int nLenParam = strlen(pszParam);
+	int nLenParam = (int)strlen(pszParam);
 	
 	//세트된 문자열이 없다면 새로 문자열을 할당한 것과 동일하게 처리함
 	if (m_pszData == NULL) {
