@@ -41,7 +41,11 @@ public:
 	int operator == (const CmyString& rhs);
 	int operator != (const CmyString& rhs);
 
+	friend CmyString operator + (const char* pszParam, const CmyString& strParam);
+
 	int GetLength() const;
 	int Append(const char* pszParam);
+
+	virtual void OnSetString(char* pszData, int nLength);
 };
 

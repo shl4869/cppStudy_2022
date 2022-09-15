@@ -43,7 +43,9 @@ int main()
     // 이름 없는 임시 객체 생성
     TestFunc2();
 
+
     //Practice6
+    cout << "\n*Practice6" << endl;
     CmyString strLeft("Hello"), strRight("World"), strResult;
     strResult = strLeft + strRight;
     cout << strResult << endl;
@@ -52,12 +54,16 @@ int main()
     strLeft += CmyString("World");
     cout << strLeft << endl;
 
+    
     //Practice7
+    cout << "\n*Practice7" << endl;
     CmyString strParam("HelloWorld");
     cout << strParam << endl;
     TestFunc3(strParam);
 
+
     //Practice8
+    cout << "\n*Practice8" << endl;
     strLeft.SetString("Test");
     strRight.SetString("String");
 
@@ -73,7 +79,9 @@ int main()
     else
         cout << "Same" << endl;
 
+
     //Practice9
+    cout << "\n*Practice9" << endl;
     CMyStringEx strTest2;
     strTest2.SetString("I am a boy.");
     cout << strTest2 << endl;
@@ -83,6 +91,7 @@ int main()
 
 
     //Practice10
+    cout << "\n*Practice10" << endl;
     CMyStringEx strTest3;
 
     //문자열이 필터링되어 대체되는 경우
@@ -95,8 +104,24 @@ int main()
 
 
     //Practice11
+    cout << "\n*Practice11" << endl;
     CMyStringEx strLeft2("Hello"), strRight2("World");
     cout << strLeft2 + strRight2 << endl;
+    
+
+    //Practice12
+    cout << "\n*Practice12" << endl;
+    CMyStringEx strTest4;
+    strTest4.SetString("멍멍2아들");
+    cout << strTest4 << endl;
+
+    //Practice13
+    cout << "\n*Practice12" << endl;
+    CmyString b("World"), c;
+    c = "Hello" + b;
+    cout << c << endl;
+
+
     return 0;
 }
 

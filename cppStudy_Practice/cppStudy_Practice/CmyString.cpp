@@ -57,12 +57,19 @@ int CmyString::SetString(const char* pszParam)
 
 	//문자열 길이
 	m_nlength = (int)strlen(pszParam);
+	if (m_nlength == 0)
+		return 0;
 
 	//메모리 할당
 	m_pszData = new char[m_nlength + 1];
+
 	//문자열 복사
 	strcpy_s(m_pszData, sizeof(char) * (m_nlength + 1), pszParam);
 
+	//미래를 호출
+	OnSetString(m_pszData, m_nlength);
+
+	//문자열의 길이를 반환
 	return m_nlength;
 }
 
@@ -123,6 +130,13 @@ int CmyString::Append(const char* pszParam) {
 
 }
 
+void CmyString::OnSetString(char* pszData, int nLength)
+{
+	if (strcmp(pszData, "멍멍2아들") == 0)
+		strcpy_s(pszData, sizeof(char) * (nLength+1), "착한아들2");
+}
+
+//OPERATORS
 CmyString& CmyString::operator=(const CmyString& rhs) {
 	//정수형 복사
 	m_nlength = rhs.m_nlength;
@@ -174,4 +188,12 @@ int CmyString::operator !=(const CmyString& rhs)
 		if (strcmp(m_pszData, rhs.m_pszData) == 0)
 			return 0;
 	return 1;
+}
+
+CmyString operator+(const char* pszParam, const CmyString& strParam)
+{
+	CmyString strResult(pszParam);
+	strResult.Append(strParam.m_pszData);
+
+	return strResult;
 }
