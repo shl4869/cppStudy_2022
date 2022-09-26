@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include "UserInterFace.h"
+#include "MyList.h"
+#include "UserData.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    CMyList DB(new CUserData);
+    CUserInterface UI(DB);
+    UI.Run();
+
+    return 0;
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
