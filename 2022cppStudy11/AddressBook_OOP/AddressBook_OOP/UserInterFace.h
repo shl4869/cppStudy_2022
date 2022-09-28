@@ -19,6 +19,8 @@ protected:
 	CMyList& m_List;
 
 public:
+	void PrintAll(void);
+
 	void Add(void);
 
 	void Search(void);

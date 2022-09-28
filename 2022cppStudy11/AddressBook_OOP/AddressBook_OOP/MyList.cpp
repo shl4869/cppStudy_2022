@@ -55,6 +55,8 @@ CMyList::~CMyList()
 
 int CMyList::AddNewNode(CMyNode* pNewNode)
 {
+	OnAddNewNode(pNewNode);
+
 	if (FindNode(pNewNode->GetKey()) != NULL)
 	{
 		delete pNewNode;
@@ -90,17 +92,31 @@ int CMyList::AddNewNode(CMyNode* pNewNode)
 //	return 1;
 //}
 
-void CMyList::PrintAll(void)
-{
-	CMyNode* pTmp = m_pHead->pNext;
-	while (pTmp != NULL)
-	{
-		pTmp->PrintNode();
-		pTmp = pTmp->pNext;
-	}
-	cout << "CUserData Counter : " << CUserData::GetUserDataCounter() << endl;
+//void CMyList::PrintAll(void)
+//{
+//	CMyNode* pTmp = m_pHead->pNext;
+//	while (pTmp != NULL)
+//	{
+//		pTmp->PrintNode();
+//		pTmp = pTmp->pNext;
+//	}
+//	cout << "CUserData Counter : " << CUserData::GetUserDataCounter() << endl;
+//
+//	_getch();
+//}
 
-	_getch();
+CMyIterator CMyList::MakeIterator(void)
+{
+	CMyIterator myIterator;
+	myIterator.m_pHead = m_pHead->pNext;
+	myIterator.m_pCurrent = m_pHead->pNext;
+
+	return myIterator;
+}
+
+int CMyList::OnAddNewNode(CMyNode* pNewNode)
+{
+	return 1;
 }
 
 CMyNode* CMyList::FindNode(const char* pszKey)

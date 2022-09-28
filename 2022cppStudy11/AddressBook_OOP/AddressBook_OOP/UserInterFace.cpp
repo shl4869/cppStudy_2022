@@ -11,6 +11,23 @@ CUserInterface::~CUserInterface()
 
 }
 
+void CUserInterface::PrintAll(void)
+{
+	//리스트에 대한 열거자를 생성
+	CMyIterator it = m_List.MakeIterator();
+	CUserData* pNode = NULL;
+
+	//열거자를 이용해 리스트 전체에 접근한다.
+	while ((pNode = static_cast<CUserData*>(it.GetuCurrent())) != NULL)
+	{
+		pNode->PrintNode();
+		it.MoveNext();
+	}
+
+	_getch();
+
+}
+
 void CUserInterface::Add(void)
 {
 	char* szName = new char[32];
@@ -90,7 +107,7 @@ int CUserInterface::Run()
 			break;
 
 		case 3:	//Print all
-			m_List.PrintAll();
+			PrintAll();
 			break;
 
 		case 4:
