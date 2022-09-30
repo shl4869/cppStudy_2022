@@ -33,6 +33,12 @@
     <ClCompile Include="MyIterator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="CmyString.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyStringEx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserData.h">
@@ -48,6 +54,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MyIterator.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CmyString.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MyStringEx.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

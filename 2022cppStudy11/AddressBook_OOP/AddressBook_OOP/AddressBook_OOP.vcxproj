@@ -140,16 +140,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AddressBook_OOP.cpp" />
+    <ClCompile Include="CmyString.cpp" />
     <ClCompile Include="MyIterator.cpp" />
     <ClCompile Include="MyNode.cpp" />
     <ClCompile Include="MyList.cpp" />
+    <ClCompile Include="MyStringEx.cpp" />
     <ClCompile Include="UserData.cpp" />
     <ClCompile Include="UserInterFace.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CmyString.h" />
     <ClInclude Include="MyIterator.h" />
     <ClInclude Include="MyList.h" />
     <ClInclude Include="MyNode.h" />
+    <ClInclude Include="MyStringEx.h" />
     <ClInclude Include="UserData.h" />
     <ClInclude Include="UserInterFace.h" />
   </ItemGroup>

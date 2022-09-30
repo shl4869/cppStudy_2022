@@ -55,18 +55,22 @@ CMyList::~CMyList()
 
 int CMyList::AddNewNode(CMyNode* pNewNode)
 {
-	OnAddNewNode(pNewNode);
-
 	if (FindNode(pNewNode->GetKey()) != NULL)
 	{
 		delete pNewNode;
 		return 0;
 	}
-	
-	pNewNode->pNext = m_pHead->pNext;
-	m_pHead->pNext = pNewNode;
 
-	return 1;
+	//미래에 재정의된다면 그 '미래'의 함수를 호출한다.
+	if (OnAddNewNode(pNewNode))
+	{
+		pNewNode->pNext = m_pHead->pNext;
+		m_pHead->pNext = pNewNode;
+
+		return 1;
+	}
+
+	return -1;
 }
 
 //int CMyList::AddNewNode(const char* pszName, const char* pszPhone)
